@@ -42,6 +42,7 @@ public class PlayerController : MonoBehaviour
                 playerAnimation.SetTrigger("Jump_trig");
                 playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
                 isOnGround = false;
+
                 dirtParticle.Stop();
                 playerAudio.PlayOneShot(jumpSound, 1.0f);
             }
@@ -62,7 +63,7 @@ public class PlayerController : MonoBehaviour
 
             explosionParticle.Play();
             dirtParticle.Stop();
-            
+
             gameOver = true;
             
             playerAnimation.SetBool("Death_b", true);
